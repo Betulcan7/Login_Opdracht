@@ -1,0 +1,17 @@
+{
+    "name": "betul/login",
+    "autoload": {
+        "psr-4": {
+            "LoginOpdracht\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Betulcan7",
+            "email": "9019870@student.zadkine.nl"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
+}

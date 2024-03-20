@@ -1,0 +1,1 @@
+{"version":1,"defects":{"LoginTest::testSetPasswordAndGetPassword":8,"LoginTest::testValidateUserWithEmptyPassword":8,"LoginTest::testValidateUserWithShortName":8,"LoginTest::testIsLoggedinWhenNotLoggedIn":8,"LoginTest::testIsLoggedinWhenLoggedIn":8,"LoginTest::testLogout":8},"times":[]}
