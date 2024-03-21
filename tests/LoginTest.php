@@ -28,7 +28,7 @@ class LoginTest extends TestCase {
     public function testValidateUserWithEmptyPassword()
     {
         // Arrange
-        $this->user->username = "john_doe";
+        $this->user->username = "test";
         
         // Act
         $errors = $this->user->ValidateUser();
@@ -40,7 +40,7 @@ class LoginTest extends TestCase {
     public function testValidateUserWithShortName()
     {
         // Arrange
-        $this->user->username = "joh";
+        $this->user->username = "test";
         
         // Act
         $errors = $this->user->ValidateUser();
