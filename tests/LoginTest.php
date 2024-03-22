@@ -12,6 +12,17 @@ class LoginTest extends TestCase {
         $this->user = new User();
     }
 
+    public function testRegisterUser()
+    {
+        $this->user->username = "test";
+        $this->user->SetPassword("test");
+    
+        $errors = $this->user->RegisterUser();
+    
+        $this->assertEmpty($errors, "Failed to register user.");
+    }
+    
+
     public function testSetPasswordAndGetPassword()
     {
         
@@ -32,17 +43,6 @@ class LoginTest extends TestCase {
         
         $this->assertContains("Password cannot be empty", $errors, "Failed to validate user with empty password.");
     }
-
-    public function testRegisterUser()
-    {
-        $this->user->username = "test";
-        $this->user->SetPassword("test");
-    
-        $errors = $this->user->RegisterUser();
-    
-        $this->assertEmpty($errors, "Failed to register user.");
-    }
-    
 
     public function testValidateUserWithShortName()
     {
