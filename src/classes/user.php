@@ -45,7 +45,7 @@ class User{
                     array_push($errors, "Er is een fout opgetreden tijdens het toevoegen van de gebruiker aan de database.");
                 }
             } catch (PDOException $e) {
-                // Vang eventuele fouten op die optreden bij het maken van de verbinding of het uitvoeren van de query
+                
                 array_push($errors, "Databasefout: " . $e->getMessage());
             }
         }
@@ -86,19 +86,16 @@ class User{
 
    // Check if the user is already logged in
     public function IsLoggedin() {
-        // Controleer of de sessievariabele voor ingelogde gebruiker is ingesteld
         return isset($_SESSION['username']);
     }
 
     public function GetUser($username){
-        // Voorbereidde statement om de gebruiker op te halen met de opgegeven gebruikersnaam
         $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE `username` = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
         // Controleer of de gebruiker is gevonden
         if ($user) {
-            // Vul de eigenschappen van het User-object met waarden uit de database
             $this->username = $user['username'];
         } else {
             // Gebruiker niet gevonden, retourneer NULL
@@ -115,9 +112,7 @@ class User{
     }
 
     public function ShowUser() {
-        // Implementeer de logica om gebruikersinformatie weer te geven
         echo "Gebruikersnaam: " . $this->username;
-        // Voeg andere informatie toe die je wilt weergeven
     }
 
 }
